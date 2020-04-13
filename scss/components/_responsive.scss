@@ -94,6 +94,13 @@
         width: 100%;
         justify-content: flex-start;
         padding: 10em 5% 0;
+        h1{
+            span:first-child{
+                width: 100%;
+                font-size: 4em;
+                line-height: .8em;
+            }
+        }
     }
     .cont-primer{
         width: 100%;
@@ -135,6 +142,9 @@
     }
     .cursor{
         display: none;
+    }
+    .eduwin{
+        height: 120vh;
     }
 }
 @media screen and (max-height: 750px){
