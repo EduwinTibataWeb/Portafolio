@@ -186,7 +186,7 @@ if ($(window).width() <= 1000) {
   $(document).on("click", ".icon-menu", function() {
       t1.reversed(!t1.reversed());
   });
-  $(document).on("click", "a", function() {
+  $(document).on("click", ".menu a", function() {
       t1.reversed(!t1.reversed());
   });
 }else{
