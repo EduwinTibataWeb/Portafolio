@@ -1,0 +1,291 @@
+.efectoPortafolio{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+.efecto-fondo{
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+.fondo1,
+.fondo2{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transform: scale(1.2);
+    pointer-events: none;
+}
+.conticle{
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba($color: #000000, $alpha: .5);
+    h1{
+        font-size: 5em;
+        color: #ffffff;
+        position: relative;
+        padding: 0 1em;
+        &::after{
+            content: '';
+            display: block;
+            width: 100%;
+            position: absolute;
+            height: 1px;
+            border-radius: .5px;
+            background-color: #ffffff;
+            left: 0;
+            bottom: 0;
+            animation: linea 5s ease-out;
+        }
+    }
+    p{
+        font-size: 1em;
+        color: #ffffff;
+        padding-top: 1em;
+    }
+}
+.cont-porta{
+    padding: 2em 10%;
+	display: flex;
+	justify-content: space-around;
+    flex-wrap: wrap;
+    background-image: url('../assets/img/fondo3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.contenedor_targeta{
+	color: #333;
+	background-color: hsla(0,0%,93%,1.00);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 280px;
+	height: 400px;
+	transition: all .5s ease-out;
+	cursor: pointer;
+    margin: 1em;
+    &:hover{
+        color: #fff;
+        background-color: hsla(0,0%,40%,1.00);
+        transform: scale(1.01);
+        -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.75);
+    }
+}
+.cont_figure{
+	position: relative;
+    a{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+.cont_figure_img{
+	width: 280px;
+	height: 280px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.porta-info{
+	padding: 1em;
+    h3:first-child{
+        font-size: 1.6em;
+    }
+    span{
+        color: hsla(359,100%,65%,1.00);
+    }
+}
+.flex{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.modal{
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	overflow: auto;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.46);
+}
+.contenido-modal{
+	position: relative;
+	background-color: #1d1d1b;
+	margin: auto;
+	width: 90%;
+	max-width: 1400px;
+	box-shadow: 0 0 6px 0 rgba(0,0,0, .4);
+	animation: modal .8s;
+}
+.close{
+	position: fixed;
+	right: 1em;
+	top: 1em;
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+	cursor: pointer;
+    transition: all .3s ease-in;
+    z-index: 1001;
+    &:hover{
+        color:#C3C3C3;
+        text-decoration: none;
+    }
+}
+.modal-body{
+	padding: 20px 16px;
+	display: flex;
+	flex-wrap: wrap;
+	color: #fff;
+}
+.cont-info-modal{
+	width: 40%;
+	border-right: 1px solid #fff;
+	text-align: right;
+	padding: 2em 1em;
+	align-self: flex-start;
+    img{
+        margin-top: .5em;
+        width: 50px;
+        filter: grayscale(1);
+        cursor: pointer;
+        transition: all .3s ease-out;
+        margin-left: .2em;
+        &:hover{
+            filter: grayscale(0);
+        }
+    }
+    span{
+        display: block;
+        padding: .1em 0em 1em; 
+    }
+    p{
+        padding-bottom: 1.5em;
+        border-bottom: 1px solid #333;
+    }
+    h2{
+        color: red;
+        font-weight: bold;
+    }
+}
+.cont-work-modal{
+	width: 60%;
+	padding: 2em;
+	box-sizing: border-box;
+	max-height: 80vh;
+	overflow: scroll;
+    iframe{
+        height: 100vh;
+    }
+}
+.cont-work-modal *{
+	width: 100%;
+}
+.list-porta{
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    background-color: #fff;
+    transition: all .3s;
+    width: 100%;
+    z-index: 100;
+    overflow: hidden;
+    border-bottom: 1px solid #C3C3C3;
+    ul{
+        list-style: none;
+        display: flex;
+        overflow-x: auto;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 10% 1em;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        li{
+            span{
+                text-align: center;
+                cursor: pointer;
+                display: block;
+                padding: 1em 3em;
+                &:hover{
+                    z-index: 100;
+                    color: #ffffff;
+                }
+                &:hover::after{
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+.cursor {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: scale(0.1) translate(-50% -50%);
+    opacity: 0;
+    margin: -100px 0 0 -100px;
+    background: url('../assets/img/fondo3.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    z-index: 1;
+}
+.category_item{
+    position: relative;
+}
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.ct_item-active{
+    position: relative;
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        border-radius: .5px;
+        background-color: #000000;
+        animation: barra .3s ease-out;
+    }
+}

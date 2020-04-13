@@ -1,0 +1,135 @@
+@import 'components/tipografia';
+*, ::after, ::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1, h2,
+h3, h4,
+h5, h6{
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.icon-menu{
+    display: none;
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    width: 30px;
+    height: 30px;
+    z-index: 100;
+    .cont-icon{
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        div{
+            transition: all .3s;
+            height: 2px;
+            border-radius: 1px;
+            background-color: #c4c4c4;
+            &:first-child{
+                width: 80%;
+            }
+            &:nth-child(2){
+                width: 65%;
+            }
+            &:last-child{
+                width: 100%;
+            }
+        }
+        &:hover{
+            div{
+                width: 100%;
+            }
+        }
+    }
+}
+.menu{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1em 3em;
+    z-index: 100;
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        li{
+            padding: 0em 1em;
+            a{
+                font-size: 1em;
+                padding: 1em 1em;
+                display: block;
+                color: #ffffff;
+                position: relative;
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 1px;
+                    background-color: #ffffff;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transition: all .3s ease-out;
+                }
+                &:hover::after{
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.logo-menu{
+    width: 150px;
+    z-index: 100;
+    img{
+        width: 100%;
+    }
+}
+.redes-sociales{
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+    a{
+        display: block;
+        color: #ffffff;
+        i{
+            font-size: 1.3em;
+        }
+    }
+}
+footer{
+    padding: .5em 2em;  
+    background-color: #333333;
+    color: #ffffff;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    a{
+        color: #ffffff;
+    }
+}
+@import 'components/index';
+@import 'components/portafolio';
+@import 'components/eduwinTibata';
+@import 'components/animaciones';
+@import 'components/responsive';
