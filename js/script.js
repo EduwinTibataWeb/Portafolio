@@ -274,7 +274,6 @@ var oneSpan2 = $('.cont-nombre h2 span:first-child');
 var twoSpan2 = $('.cont-nombre h2 span:last-child');
 var titulo3 = $('.conticle h1');
 TweenMax.from(imgIndex, 2, {
-    y: 15,
     autoAlpha: 0, 
     ease: Expo.easeInOut, 
     delay: 2
