@@ -104,6 +104,11 @@
     &:first-child{
         grid-column: 1 / -2;
     }
+    &:nth-child(7){
+        grid-column: span 2;
+        grid-row: span 2;
+        height: 100%;
+    }
 }
 .cont_figure{
     position: relative;
@@ -164,6 +169,7 @@
 	width: 100%;
 	height: 100%;
     background: rgba(0,0,0,0.46);
+    animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     &::-webkit-scrollbar{
         display: none;
     }
@@ -173,7 +179,7 @@
 	background-color: #1d1d1b;
 	margin: auto;
     width: 90%;
-    height: 90vh;
+    max-height: 90vh;
     overflow: scroll;
 	max-width: 1400px;
 	box-shadow: 0 0 6px 0 rgba(0,0,0, .4);
