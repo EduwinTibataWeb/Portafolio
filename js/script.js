@@ -5,7 +5,31 @@ tloader.to(getpreLoader, 4,{
   ease: Expo.easeInOut,
   scale: 1.2
 });
-$('document').ready(function(){
+$(document).ready(function(){
+   let alturaHablidades = $('#ver_mas').offset().top;
+   let alturaEstudio = $('#estudios').offset().top;
+   let alturaLogros = $('#logros').offset().top;
+   $(window).on('scroll', function(){
+     if($(window).scrollTop() > alturaHablidades){
+      $('.indicadores_yo').addClass('menu_pegado');
+        if($(window).scrollTop() > alturaHablidades && $(window).scrollTop() < alturaEstudio){
+          $('.indicadores_yo ul').addClass('borde1');
+          $('.indicadores_yo ul').removeClass('borde2');
+        }else if($(window).scrollTop() >= alturaEstudio && $(window).scrollTop() < alturaLogros){
+          $('.indicadores_yo ul').removeClass('borde1');
+          $('.indicadores_yo ul').removeClass('borde3');
+          $('.indicadores_yo ul').addClass('borde2');
+        }else{
+          $('.indicadores_yo ul').removeClass('borde2');
+          $('.indicadores_yo ul').addClass('borde3');
+        }
+     }else{
+      $('.indicadores_yo').removeClass('menu_pegado');
+      $('.indicadores_yo ul').addClass('borde1');
+    }
+   });
+});
+$(document).ready(function(){
     "use strict";
     var card = $('.cont-nombre');
     var card2 = $('.efecto-fondo img:first-child');
@@ -139,8 +163,8 @@ $('document').ready(function(){
             TweenLite.to($cursor, 0.3, { scale: 0.1, autoAlpha: 0 });
           });   
     };
-  });
-  $(document).ready(function(){
+});
+$(document).ready(function(){
     $('a[href^="#"]').click(function(event){
       //Aquí elimina el evento normal de la etiqueta <a>
       event.preventDefault();
@@ -150,7 +174,7 @@ $('document').ready(function(){
         scrollTop: $(elem).offset().top
       },500);
     });
-  });
+});
 if ($(window).width() <= 1000) {  
   var t1 = new TimelineMax({paused: true});
   t1.to(".dos", 0.8, {

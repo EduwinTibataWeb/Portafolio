@@ -97,11 +97,12 @@
     position: absolute;
     bottom: 0;
     right: 2.5em;
-    padding: 30px ;
+    padding: 30px;
 }  
 .swiper-wrapper {
     transition-delay: .5s;
-  }
+    cursor: grab;
+}
 .swiper-slide {
     width: 350px;
     height: 200px;
@@ -126,8 +127,8 @@
     background-size: cover;
     width: 100%;
     height: 100%;
-  }
-  .slide-img::after {
+}
+.slide-img::after {
     content: '';
     width: 100%;
     height: 100%;
@@ -137,13 +138,11 @@
     left: 0;
     top: 0;
     transition: all 1s ease-in-out;
-  }
-  
-  .slide-img:hover::after {
+}
+.slide-img:hover::after {
     opacity: .5;
-  }
-  
-  .slide-number {
+}
+.slide-number {
     position: absolute;
     top: -35px;
     right: 0;
@@ -151,19 +150,16 @@
     width: 100px;
     height: 100px;
     overflow: hidden;
-  }
-  
-  .slide-number p {
+}
+.slide-number p {
     font-size: 50px;
     color: #ffffff;
     position: relative;
-  }
-  
-  .slide-number p span {
+}
+.slide-number p span {
     position: absolute;
-  }
-  
-  .slide-text {
+}
+.slide-text {
     position: absolute;
     bottom: -70px;
     left: 50px;
@@ -171,15 +167,12 @@
     width: 200px;
     height: 100px;
     overflow: hidden;
-  }
-  
-  .slide-text p {
+}
+.slide-text p {
     color: #fff;
     font-size: 40px;
     position: relative;
-  }
-  .slide-text p span {
+}
+.slide-text p span {
     position: absolute;
 }
-  
-  

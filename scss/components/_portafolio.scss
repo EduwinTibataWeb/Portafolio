@@ -64,9 +64,11 @@
 }
 .cont-porta{
     padding: 2em 10%;
-	display: flex;
-	justify-content: space-around;
-    flex-wrap: wrap;
+    width: 100%;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
     background-image: url('../assets/img/fondo3.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -79,11 +81,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	width: 280px;
-	height: 400px;
+	width: 100%;
+	height: 300px;
 	transition: all .5s ease-out;
 	cursor: pointer;
-    margin: 1em;
     &:hover{
         color: #fff;
         background-color: hsla(0,0%,40%,1.00);
@@ -91,10 +92,24 @@
         -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.75);
         box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.75);
+        .porta-info{
+            bottom: 0;
+        }
+        .cont_figure_img{
+            img{
+                transform: scale(1.2);
+            }
+        }
+    }
+    &:first-child{
+        grid-column: 1 / -2;
     }
 }
 .cont_figure{
-	position: relative;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     a{
         width: 100%;
         height: 100%;
@@ -107,16 +122,24 @@
     }
 }
 .cont_figure_img{
-	width: 280px;
-	height: 280px;
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
     img{
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: .3s all ease-out;
     }
 }
 .porta-info{
-	padding: 1em;
+    position: absolute;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 20%, rgba(255,255,255,0) 100%);
+    bottom: -100%;
+    width: 100%;
+    padding: 1em;
+    transition: all .5s ease-out;
     h3:first-child{
         font-size: 1.6em;
     }
@@ -136,19 +159,28 @@
 	position: fixed;
 	z-index: 1000;
 	overflow: auto;
-	top: 0;
+    top: 0;
+    padding-top: 2em;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.46);
+    background: rgba(0,0,0,0.46);
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 .contenido-modal{
 	position: relative;
 	background-color: #1d1d1b;
 	margin: auto;
-	width: 90%;
+    width: 90%;
+    height: 90vh;
+    overflow: scroll;
 	max-width: 1400px;
 	box-shadow: 0 0 6px 0 rgba(0,0,0, .4);
-	animation: modal .8s;
+    animation: modal .8s;
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 .close{
 	position: fixed;
@@ -206,13 +238,16 @@
 	padding: 2em;
 	box-sizing: border-box;
 	max-height: 80vh;
-	overflow: scroll;
+    overflow: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
     iframe{
         height: 100vh;
     }
-}
-.cont-work-modal *{
-	width: 100%;
+    & *{
+        width: 100%;
+    }
 }
 .list-porta{
     padding-top: 1.5em;
@@ -262,6 +297,16 @@
     background: url('../assets/img/fondo3.jpg') no-repeat 50% 50%;
     background-size: cover;
     z-index: 1;
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: .5);
+    }
 }
 .category_item{
     position: relative;
