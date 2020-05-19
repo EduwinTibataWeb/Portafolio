@@ -87,20 +87,12 @@
     }
     .eduwin{
         justify-content: flex-start;
-        background-size: cover;
-        background-blend-mode: luminosity;
+        &::before{
+            opacity: .5;
+        }
     }
     .con_mi_info{
         width: 100%;
-        justify-content: flex-start;
-        padding: 10em 5% 0;
-        h1{
-            span:first-child{
-                width: 100%;
-                font-size: 4em;
-                line-height: .8em;
-            }
-        }
     }
     .habilidades{
         height: auto;
@@ -194,7 +186,12 @@
         display: none;
     }
     .eduwin{
-        height: 120vh;
+        height: 100vh;
+        min-height: 500px;
+            &::before{
+                opacity: .5;
+                background-size: cover;
+        }
     }
     .cont-porta{
         grid-template-columns: 1fr;
@@ -221,6 +218,13 @@
 		border-right: none;
 		border-bottom: 1px solid #fff;
     }
+    .swiper-container{
+        right: 1em;
+    }
+    .swiper-slide{
+        width: 250px;
+        height: 180px;
+    }
 }
 @media screen and (max-width: 500px){
     .cont-work-modal, .cont-info-modal{
@@ -235,6 +239,13 @@
 		text-align: center;
 		border-right: none;
 		border-bottom: 1px solid #fff;
+    }
+    .con_mi_info{
+        padding: 3em 10% 0;
+        justify-content: start;
+        h1{
+            font-size: 2em;
+        }
     }
 }
 @media screen and (max-width: 350px){
@@ -251,8 +262,16 @@
         bottom: -30%;
     }
 }
-@media screen and (max-height: 650px){
-    .cont_mi_info{
-        padding: 4em 5% 0;
+@media screen and (max-height: 500px){
+    .eduwin{
+        height: 100vh;
+        min-height: 550px;
+    }
+    .con_mi_info{
+        padding: 5em 10% 0;
+        justify-content: start;
+        h1{
+            font-size: 2em;
+        }
     }
 }
