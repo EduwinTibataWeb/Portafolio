@@ -151,6 +151,10 @@
             transform: translateY(0);
         }
     }
+    .all-skills, 
+    .cont_img_skills{
+        width: 100%;
+    }
 }
 @media screen and (max-width: 900px){
     .cont-porta{
@@ -191,6 +195,7 @@
             &::before{
                 opacity: .5;
                 background-size: cover;
+                background-position: center;
         }
     }
     .cont-porta{
@@ -242,7 +247,6 @@
     }
     .con_mi_info{
         padding: 3em 10% 0;
-        justify-content: start;
         h1{
             font-size: 2em;
         }
