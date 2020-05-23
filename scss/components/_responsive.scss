@@ -155,6 +155,13 @@
     .cont_img_skills{
         width: 100%;
     }
+    .skills{
+        width: 30%;
+    }
+    .skills_items{
+        width: 70%;
+        margin-left: -3rem;
+    }
 }
 @media screen and (max-width: 900px){
     .cont-porta{
@@ -259,6 +266,16 @@
         h3{
             font-size: 2rem;
         }
+    }
+    .skills{
+        width: 40%;
+    }
+    .skills_items{
+        width: 90%;
+        margin-left: -1rem;
+    }
+    .item_skills{
+        height: 200px;
     }
 }
 @media screen and (max-height: 750px){
