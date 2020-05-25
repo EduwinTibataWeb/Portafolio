@@ -6,6 +6,15 @@ tloader.to(getpreLoader, 4,{
   scale: 1.2
 });
 $(document).ready(function(){
+    let contacto = $('#contato');
+    contacto.on('click', function(){
+      $('.contactame_modal').css('display', 'flex');
+    });
+    $('#close_contactame').on('click', () =>{
+      $('.contactame_modal').css('display', 'none');
+    });
+});
+$(document).ready(function(){
   var slider = new Swiper(".swiper-container", {
     slidesPerView: 'auto',
     spaceBetween: 50,
@@ -285,6 +294,18 @@ $(document).ready(function(){
             TweenLite.to($cursor, 0.3, { scale: 0.1, autoAlpha: 0 });
           });   
     };
+    $('.ir-arriba').click(function(){
+        $('body, html').animate({
+          scrollTop:'0'
+        });
+    });
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 500 ){
+          $('.ir-arriba').slideDown(300);
+        } else{
+          $('.ir-arriba').slideUp(300);
+        }
+    });
 });
 $(document).ready(function(){
   if ($(window).width() <= 1000) {  

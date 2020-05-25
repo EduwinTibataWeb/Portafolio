@@ -164,6 +164,13 @@
     }
 }
 @media screen and (max-width: 900px){
+    .cont_body{
+        flex-direction: column-reverse;
+    }
+    .cotactame_img,
+    .contactame_info{
+        width: 100%;
+    }
     .cont-porta{
         grid-template-columns: 1fr 1fr;
     }
@@ -239,6 +246,11 @@
     }
 }
 @media screen and (max-width: 500px){
+    .contactame_info{
+        p{
+            font-size: 1.5rem;
+        }
+    }
     .cont-work-modal, .cont-info-modal{
 		width: 100%;
     }
@@ -258,15 +270,6 @@
             font-size: 2em;
         }
     }
-}
-@media screen and (max-width: 350px){
-    .cont_text_part1,
-    .cont_text_part2{
-        padding: 3rem;
-        h3{
-            font-size: 2rem;
-        }
-    }
     .skills{
         width: 40%;
     }
@@ -276,6 +279,15 @@
     }
     .item_skills{
         height: 200px;
+    }
+}
+@media screen and (max-width: 350px){
+    .cont_text_part1,
+    .cont_text_part2{
+        padding: 3rem;
+        h3{
+            font-size: 2rem;
+        }
     }
 }
 @media screen and (max-height: 750px){
